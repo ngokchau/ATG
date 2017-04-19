@@ -14,12 +14,7 @@
       $scope.malePercentage = malePercentage;
       $scope.femalePercentage = femalePercentage;
 
-      if(femalePercentage > malePercentage)
-        $scope.currentWinner = 'f';
-      else if(malePercentage > femalePercentage)
-        $scope.currentWinner = 'm';
-      else
-        $scope.currentWinner = '#';
+      $scope.maleColorClass = '';
 
       /**
        * Triggered on ng-init. Request all the necessary data to render
@@ -100,12 +95,21 @@
         $scope.malePercentage = malePercentage.toFixed(0) + '%';
         $scope.femalePercentage = femalePercentage.toFixed(0) + '%';
 
-        if(femalePercentage > malePercentage)
+        if(femalePercentage > malePercentage) {
           $scope.currentWinner = 'f';
-        else if(malePercentage > femalePercentage)
+          $scope.femaleColorClass = 'text-success';
+          $scope.maleColorClass = 'text-danger';
+        }
+        else if(malePercentage > femalePercentage) {
           $scope.currentWinner = 'm';
-        else
+          $scope.femaleColorClass = 'text-danger';
+          $scope.maleColorClass = 'text-success';
+        }
+        else {
           $scope.currentWinner = '#';
+          $scope.femaleColorClass = '';
+          $scope.maleColorClass = '';
+        }
       }
     }
   ]);
