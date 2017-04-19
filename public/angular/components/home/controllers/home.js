@@ -23,7 +23,9 @@
 
       /**
        * Triggered on ng-init. Request all the necessary data to render
-       * the view
+       * the view. Segment out the data by gender after receiving the data
+       * from the server. This is necessary to calculate the percentage of
+       * male to female voters.
        */
       $scope.init = function() {
         Vote.list()
@@ -48,7 +50,7 @@
       };
 
       /**
-       * Triggered when user clicks the vote button to case a vote. Checks
+       * Triggered when user clicks the vote button to cast a vote. Checks
        * that the input has not been modified. If so, prevent the function
        * from executing further. Otherwise, cast the vote by triggering
        * the manifest() function in the Vote service.

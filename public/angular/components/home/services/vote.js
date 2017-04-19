@@ -1,17 +1,31 @@
 (function() {
   'use strict';
 
-  angular.module('vote').service('Vote', ['$http', function($http) {
-    var Vote = {};
+  angular.module('vote').service('Vote', ['$http',
+    function($http) {
+      var Vote = {};
 
-    Vote.manifest = function(gender) {
-      return $http.post('/api/votes', { gender: gender });
-    };
+      /**
+       * Sends an http POST request the votes API endpoint with the
+       * specified msg format.
+       *
+       * @param gender
+       * @returns {HttpPromise}
+       */
+      Vote.manifest = function(gender) {
+        return $http.post('/api/votes', { gender: gender });
+      };
 
-    Vote.list = function() {
-      return $http.get('/api/votes');
-    };
+      /**
+       * Retrieves a list of all the previously casted votes
+       *
+       * @returns {HttpPromise}
+       */
+      Vote.list = function() {
+        return $http.get('/api/votes');
+      };
 
-    return Vote;
-  }]);
+      return Vote;
+    }
+  ]);
 })();
