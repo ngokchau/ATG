@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>ATG Spec 1</title>
+    <link rel="stylesheet" href="/lib/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/lib/vendors/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/lib/vendors/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/angular/components/home/css/home.css"/>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-1">
+        <h2>
+            Spec: Blue square is 5 units by 5 units, the yellow square is centered vertically and horizontally within the blue square.
+        </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-1">
+        <h4>
+            Q1: Create a layout to replicate the blue and yellow squares above using HTML and CSS
+        </h4>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-1">
+        <h4>
+            Q2: Create the same layout using HTML5 Canvas
+        </h4>
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var outerWidth = 400;
+    var outerHeight = 400;
+    var innerWidth = 250;
+    var innerHeight = 250;
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle = 'dodgerblue';
+    context.fillRect(0, 0, outerWidth, outerHeight);
+    context.fillStyle = 'gold';
+    context.fillRect(outerWidth/2 - innerWidth/2, outerHeight/2 - innerHeight/2, innerWidth, innerHeight);
+</script>
+
+</body>
+</html>
