@@ -8,38 +8,30 @@
 </head>
 <body>
 
-<div class="row">
-    <div class="col-md-4 col-md-offset-1">
-        <h2>
-            Spec: Blue square is 5 units by 5 units, the yellow square is centered vertically and horizontally within the blue square.
-        </h2>
+<div style="margin: 0 auto; width: 500px;">
+    <h2>
+        Spec: Blue square is 5 units by 5 units, the yellow square is centered vertically and horizontally within the blue square.
+    </h2>
+
+    <h4>
+        Q1: Create a layout to replicate the blue and yellow squares above using HTML and CSS
+    </h4>
+    <div class="outer">
+        <div class="inner"></div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-4 col-md-offset-1">
-        <h4>
-            Q1: Create a layout to replicate the blue and yellow squares above using HTML and CSS
-        </h4>
-        <div class="outer">
-            <div class="inner"></div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4 col-md-offset-1">
-        <h4>
-            Q2: Create the same layout using HTML5 Canvas
-        </h4>
-        <canvas id="canvas" width="500" height="500"></canvas>
-    </div>
+
+    <h4>
+        Q2: Create the same layout using HTML5 Canvas
+    </h4>
+    <canvas id="canvas" width="500" height="500"></canvas>
 </div>
 
 <script type="text/javascript">
-    var outerWidth = 400;
-    var outerHeight = 400;
+    var canvas = document.getElementById('canvas');
+    var outerWidth = canvas.getAttribute('width');
+    var outerHeight = canvas.getAttribute('height');
     var innerWidth = 250;
     var innerHeight = 250;
-    var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     context.fillStyle = 'dodgerblue';
     context.fillRect(0, 0, outerWidth, outerHeight);

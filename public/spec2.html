@@ -14,39 +14,42 @@
 <body ng-init="init()" ng-controller="homeCtrl">
 
 <div class="row">
-    <span class="col-md-6 col-md-offset-3 text-center text-huge">I AM</span>
+    <div class="col-sm-12 col-md-6 col-md-offset-3 text-center text-huge">I AM</div>
 
-    <h1 class="col-md-3 col-md-offset-3 text-center sub-header box-padding">FEMALE</h1>
-    <h1 class="col-md-3 text-center sub-header box-padding">MALE</h1>
+    <div class="col-sm-3 col-md-offset-3 text-center sub-header">
+        <div class="box-padding">
+            <h1>FEMALE</h1>
+        </div>
 
-    <div class="col-md-3 col-md-offset-3 box-padding" align="center">
         <div ng-class="femaleColorClass">
             <i class="fa fa-female fa-big"></i>
         </div>
-    </div>
-    <div class="col-md-3 box-padding" align="center">
-        <div ng-class="maleColorClass">
-            <i class="fa fa-male fa-big"></i>
+
+        <div class="box-padding">
+            <h1 ng-class="femaleColorClass">
+                {{ femalePercentage }}
+            </h1>
         </div>
-    </div>
 
-    <div class="col-md-3 col-md-offset-3 text-center box-padding">
-        <h1 ng-class="femaleColorClass">
-            {{ femalePercentage }}
-        </h1>
-    </div>
-    <div class="col-md-3 text-center box-padding">
-        <h1 ng-class="maleColorClass">
-            {{ malePercentage }}
-        </h1>
-    </div>
-
-    <div class="col-md-3 col-md-offset-3 text-center">
         <button type="button" class="btn btn-success" ng-click="castVote('f')">
             <i class="fa fa-check"></i> VOTE
         </button>
     </div>
-    <div class="col-md-3 text-center">
+    <div class="col-sm-3 text-center sub-header">
+        <div class="box-padding">
+            <h1>MALE</h1>
+        </div>
+
+        <div ng-class="maleColorClass">
+            <i class="fa fa-male fa-big"></i>
+        </div>
+
+        <div class="box-padding">
+            <h1 ng-class="maleColorClass">
+                {{ malePercentage }}
+            </h1>
+        </div>
+
         <button type="button" class="btn btn-success" ng-click="castVote('m')">
             <i class="fa fa-check"></i> VOTE
         </button>
