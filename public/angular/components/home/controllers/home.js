@@ -22,8 +22,8 @@
         $scope.currentWinner = '#';
 
       /**
-       * Triggered on page on ng-init. Request all the necessary data to
-       * render the view
+       * Triggered on ng-init. Request all the necessary data to render
+       * the view
        */
       $scope.init = function() {
         Vote.list()
@@ -67,9 +67,9 @@
 
         Vote.manifest(gender)
           .then(function(res) {
-            var ok = 200 === res.status;
+            var resIsOk = 200 === res.status;
 
-            if(!ok) {
+            if(!resIsOk) {
               console.log('ServerResponseException');
               return;
             }
