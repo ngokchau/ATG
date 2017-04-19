@@ -14,8 +14,6 @@
       $scope.malePercentage = malePercentage;
       $scope.femalePercentage = femalePercentage;
 
-      $scope.maleColorClass = '';
-
       /**
        * Triggered on ng-init. Request all the necessary data to render
        * the view. Segment out the data by gender after receiving the data
@@ -96,17 +94,14 @@
         $scope.femalePercentage = femalePercentage.toFixed(0) + '%';
 
         if(femalePercentage > malePercentage) {
-          $scope.currentWinner = 'f';
           $scope.femaleColorClass = 'text-success';
           $scope.maleColorClass = 'text-danger';
         }
         else if(malePercentage > femalePercentage) {
-          $scope.currentWinner = 'm';
           $scope.femaleColorClass = 'text-danger';
           $scope.maleColorClass = 'text-success';
         }
         else {
-          $scope.currentWinner = '#';
           $scope.femaleColorClass = '';
           $scope.maleColorClass = '';
         }
