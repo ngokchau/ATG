@@ -1,0 +1,29 @@
+body {
+    padding-top: 3em;
+}
+
+.fa-big {
+    font-size: 12em;
+}
+
+.text-huge {
+    font-size: 10em;
+}
+
+.sub-header {
+    color: #AAAAAA;
+}
+
+.box-padding {
+    padding: 1em 0;
+}
+
+.card {
+    background: gold;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 4px solid #444444;
+    padding: 25px 0;
+    width: 33%;
+}
